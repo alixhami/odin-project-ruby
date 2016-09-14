@@ -17,7 +17,7 @@ def substrings(string,dictionary)
 	word_count
 end
 
-# Tests - Success if True prints twice
+# Test - Success if console prints true twice
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 puts substrings("below",dictionary) == {"below"=>1, "low"=>1}
