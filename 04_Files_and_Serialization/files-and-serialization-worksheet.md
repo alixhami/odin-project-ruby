@@ -2,7 +2,7 @@
 
 + What are two ways to store a file from your hard drive into a string or array in your Ruby script?
   + Number 1
-  ```Ruby
+  ```ruby
   file = open("tester.txt", 'r')
   insides = file.read
   ```
@@ -27,7 +27,7 @@
   + Structure is shown through indentation (one or more spaces).
   + Sequence items are denoted by a dash, and key value pairs within a map are separated by a colon.
 + How do you turn a Ruby object into JSON?
-  ```Ruby
+  ```ruby
   require 'json'
 
   class A
@@ -52,7 +52,7 @@
   object.to_json #returns a JSON string
   ```
 + How do you turn JSON into a Ruby object?
-  ```Ruby
+  ```ruby
   JSON.load string #returns an object
   JSON.parse string #returns an object
   object.from_json #returns an object
