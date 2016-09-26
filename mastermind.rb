@@ -24,6 +24,7 @@ class Mastermind
   end
 
   def play_as_breaker
+  	new_code
     12.times do |i|
       print "\nGuess ##{i+1}: "
       guess = gets.chomp.split(" ")
@@ -77,7 +78,6 @@ end
 puts "Welcome to MASTERMIND"
 puts "\nIn this game, a code maker will devise a code of four colors. The possible colors are red, green, blue, yellow, black, and white. A code breaker will then have 12 guesses to crack the code. Codes should be formatted as four colors separated by spaces, like this: 'yellow green blue black'. Note that colors may be repeated. The code breaker will receive feedback for each guess. If the code breaker chooses a color in the right spot, they will receive the feedback of 'black'. If the code breaker chooses the right color in the wrong spot, they will get the feedback of 'white'."
 game = Mastermind.new
-game.new_code
 puts "\nWould you like to be the code 'maker' or 'breaker'?"
 player = gets.chomp
 loop do
