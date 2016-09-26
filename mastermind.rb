@@ -39,18 +39,29 @@ class Mastermind
   end
 
   def computer_play_as_breaker
-  	reasonable_guesses = @@possible_colors
+  	answer = {}
+  	puts " "
   	12.times do |i|
       computer_guess = []
-      4.times {|j| computer_guess << reasonable_guesses.shuffle.first}
-      puts "\nGuess ##{i+1}: #{computer_guess}"
-      feedback = test_guess(guess)
+      if (0..5) === i
+      	4.times {|j| computer_guess << @@possible_colors[i]}
+      	feedback = test_guess(computer_guess)
+      	feedback.each_with_index do |item,index|
+          answer[index+1] = @@possible_colors[i] if item == "black"
+        end
+      else
+      	computer_guess = [answer[1], answer[2], answer[3], answer[4]]
+        feedback = test_guess(computer_guess)
+      end
+
       if feedback == ["black", "black", "black", "black"]
-  	    puts "The computer cracked your code!"
+      	puts "\nYour code is: #{computer_guess.join(" ")}!"
+  	    puts "\nThe computer cracked your code in just #{i+1} guesses! \nDefeated by a MACHINE!"
   	    break
       else
-  	    puts "Feedback: #{feedback}"
+  	    puts "Guessing..."
       end
+
       puts "\nCONGRATULATIONS! You have triumphed over the machine!" if i == 11
     end
   end
