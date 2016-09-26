@@ -51,9 +51,12 @@
   JSON.generate object #returns a JSON string
   object.to_json #returns a JSON string
   ```
+  
 + How do you turn JSON into a Ruby object?
   ```ruby
+
   JSON.load string #returns an object
   JSON.parse string #returns an object
   object.from_json #returns an object
+
   ```
